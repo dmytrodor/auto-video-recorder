@@ -32,7 +32,8 @@ def main():
         else:
             # create output directory if not exists
             os.makedirs(DATA_DIR, exist_ok=True)
-            cmd = f"ffmpeg -f v4l2 -framerate 30 -video_size {VIDEO_RES} -c:v mjpeg -i {DEVICE} -c:v copy -r 30 -preset veryfast -tune zerolatency -y " + get_file_path(DATA_DIR)
+            cmd = "ffmpeg -f v4l2 -framerate 30 -video_size {video_res} -c:v mjpeg -i {device} -vcodec libx264 -r 30 -preset veryfast -tune zerolatency -y {output}"
+            cmd = cmd.format(video_res=VIDEO_RES, device=DEVICE, output=get_file_path(DATA_DIR))
             print("-" * 100 + "\n", cmd, "\n" + "-" * 100)
             call(cmd.split())
             break
