@@ -1,0 +1,8 @@
+[Unit]
+Description=Service that stars video recording from camera
+
+[Service]
+ExecStart=/usr/local/bin/auto_record.sh
+
+[Install]
+WantedBy=multi-user.target
