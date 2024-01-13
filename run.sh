@@ -2,7 +2,7 @@
 
 DEVICE="/dev/video0"
 FILE_EXT=".ts"
-DATA_DIR="/home/zero/Videos"
+DATA_DIR="/home/${USER}/Videos"
 VIDEO_RES="640x480"
 
 # Function to check if camera is available
