@@ -1,0 +1,8 @@
+[Unit]
+Description=Service that runs the bleeping script (bleep when ffmpeg working or not)
+
+[Service]
+ExecStart=/usr/local/bin/bleeper.sh
+
+[Install]
+WantedBy=multi-user.target
